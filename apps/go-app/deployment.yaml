@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: go-app
-          image: mithleshdev/go-server:latest
+          image: mithleshdev/go-server:aef28d2
           ports:
             - containerPort: 8080
