@@ -1,3 +1,18 @@
 resources:
   - deployment.yaml
   - service.yaml
+  - secret.yaml
+  - configmap.yaml
+
+configMapGenerator:
+  - name: nginx-config
+    literals:
+      - LOG_LEVEL=info
+      - ENV=base
+
+secretGenerator:
+  - name: nginx-secret
+    literals:
+      - API_KEY=changeme
+generatorOptions:
+  disableNameSuffixHash: false
