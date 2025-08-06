@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: go-app
-          image: mithleshdev/go-server:f48c1f0
+          image: mithleshdev/go-server:8543f76
           ports:
             - containerPort: 8080
           readinessProbe:       # ✅ Readiness Probe
