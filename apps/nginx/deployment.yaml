@@ -19,3 +19,24 @@ spec:
           image: nginx:1.25.4
           ports:
             - containerPort: 80
+          readinessProbe:       # ✅ Readiness Probe
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            failureThreshold: 3
+          livenessProbe:        # ✅ Liveness Probe
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 15
+            periodSeconds: 20
+            failureThreshold: 5
+          resources:            # ✅ Resource limits (optional, but best practice)
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 250m
+              memory: 256Mi
