@@ -14,20 +14,20 @@ spec:
     spec:
       containers:
         - name: go-app
-          image: mithleshdev/go-server:8543f76
+          image: mithleshdev/go-server:d6628d4
           ports:
-            - containerPort: 8080
+            - containerPort: 80
           readinessProbe:       # ✅ Readiness Probe
             httpGet:
               path: /
-              port: 8080
+              port: 80
             initialDelaySeconds: 5
             periodSeconds: 10
             failureThreshold: 3
           livenessProbe:        # ✅ Liveness Probe
             httpGet:
               path: /
-              port: 8080
+              port: 80
             initialDelaySeconds: 15
             periodSeconds: 20
             failureThreshold: 5
